@@ -19,13 +19,16 @@ const forecast = (lat, long, callback) => {
       callback('Cannot find location. Try again', undefined)
       // console.log();
     } else {
-      // const data = response.body;
-      const {temperature, feelslike, wind_speed, weather_descriptions} = body.current
+      console.log(body);
+      
+      const {temperature, feelslike, wind_speed, weather_descriptions, humidity, weather_icons} = body.current
       callback(undefined, {
         temperature,  
         feelslike,
         wind_speed,
-        weather_descriptions
+        weather_descriptions,
+        humidity,
+        weather_icons
       })
     }
   })
